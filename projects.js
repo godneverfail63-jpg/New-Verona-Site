@@ -53,18 +53,5 @@ window.PROJECTS = [
     content: ".We developed premium visual content to showcase the brand’s products, strengthen its luxury positioning, and increase awareness of its physical location. Through consistent ad creation and strategic product presentation, we attracted new potential buyers and helped drive monthly revenue from ₦5 million to ₦15 million within 60 days.",
     ctaLabel: "", ctaUrl: "", seoDescription: ""
   },
-  {
-    slug: "sample-clipping",
-    title: "Sample Clipping Project",
-    subtitle: "Raw footage into content that sells",
-    category: "Clipping",
-    client: "Sample Client",
-    year: "2026",
-    services: ["Clipping"],
-    heroImage: "", videoUrl: "", gallery: [],
-    excerpt: "Replace this with what you edited and why it worked.",
-    challenge: "", solution: "", results: "",
-    content: "Write about the project here.",
-    ctaLabel: "", ctaUrl: "", seoDescription: ""
-  }
+
 ];
