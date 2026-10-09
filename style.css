@@ -110,4 +110,4 @@ main,footer{position:relative;z-index:1}
 /* ---- Side padding fix (keeps text off the screen edge) ---- */
 .hero-inner,.case-grid,.footer{padding-left:28px;padding-right:28px}
 @media(max-width:520px){.hero-inner,.case-grid,.footer{padding-left:20px;padding-right:20px}}
-@media(max-width:800px){body::before{background-size:100vw auto;opacity:.10}}
+@media(max-width:800px){body::before{background-size:100vw auto;opacity:.15}}
