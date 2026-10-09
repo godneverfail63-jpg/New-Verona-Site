@@ -11,7 +11,7 @@
 <nav class="nav"><div class="wrap navin">
   <a class="logo" href="#top" data-home>VERANO</a>
   <div class="navlinks"><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div>
-  <a class="btn" href="#contact">Start a project</a>
+  <a class="btn" href="#/start">Start a project</a>
 </div></nav>
 
 <main id="home">
@@ -52,7 +52,7 @@
   <section class="section" id="contact"><div class="wrap"><div class="cta">
     <div><div class="kicker">Let’s build something visible</div><h2>Built for brands that want to be seen.</h2>
     <div class="socials" id="socials"></div></div>
-    <a class="btn" id="mailBtn" href="#">Start a conversation ↗</a>
+    <a class="btn" id="mailBtn" href="#/start">Start a conversation ↗</a>
   </div></div></section>
 </main>
 
@@ -73,6 +73,41 @@
     <article id="caseContent" class="case-content"></article>
   </div></section>
   <div class="wrap"><div id="caseGallery" class="case-gallery"></div><div id="caseCta" class="case-cta"></div></div>
+</main>
+
+<main id="start" class="start" hidden>
+  <section class="wrap start-wrap">
+    <a class="back" href="#contact">← Back</a>
+    <div class="kicker">Start a conversation</div>
+    <h1>Tell us about your brand.</h1>
+    <p class="sub">A few quick details and we’ll get back to you.</p>
+    <form id="leadForm" novalidate>
+      <label class="field"><span>Your name *</span><input name="name" id="lfName" autocomplete="name" required></label>
+      <label class="field"><span>Business or brand name</span><input name="business" autocomplete="organization"></label>
+      <fieldset class="field"><legend>What do you need? *</legend>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" name="service" value="Social Media Management"><span>Social Media Management</span></label>
+          <label class="chip"><input type="checkbox" name="service" value="Content Systems"><span>Content Systems</span></label>
+          <label class="chip"><input type="checkbox" name="service" value="Event Coverage"><span>Event Coverage</span></label>
+          <label class="chip"><input type="checkbox" name="service" value="Ad Creation"><span>Ad Creation</span></label>
+          <label class="chip"><input type="checkbox" name="service" value="Clipping"><span>Clipping</span></label>
+          <label class="chip"><input type="checkbox" name="service" value="Not sure yet"><span>Not sure yet</span></label>
+        </div>
+      </fieldset>
+      <label class="field"><span>How should we reach you? *</span>
+        <select name="contact_method" id="lfMethod"><option>WhatsApp</option><option>Phone call</option><option>Email</option><option>Instagram</option></select></label>
+      <label class="field"><span id="lfDetailLabel">Your WhatsApp number *</span><input name="contact_detail" id="lfDetail" type="tel" placeholder="+233 …" required></label>
+      <label class="field"><span>Anything else we should know?</span><textarea name="message" rows="4"></textarea></label>
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn btn-solid" type="submit" id="lfSubmit">Send message</button>
+      <p class="form-msg" id="lfMsg" role="status"></p>
+    </form>
+    <div class="form-done" id="lfDone" hidden>
+      <div class="kicker">Message sent</div>
+      <h2>Thank you. We’ll be in touch soon.</h2>
+      <a class="btn" href="#work">See our work ↗</a>
+    </div>
+  </section>
 </main>
 
 <footer class="wrap footer"><span>© 2026 VERANO</span><span>Luxury social media marketing agency</span><span class="gold">Built for brands that want to be seen.</span></footer>

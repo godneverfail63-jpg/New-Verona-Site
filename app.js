@@ -54,7 +54,6 @@
 
   function renderContact() {
     var mail = SITE.email || "";
-    $("mailBtn").href = mail ? "mailto:" + mail : "#contact";
     var links = [["Instagram", SITE.instagram], ["TikTok", SITE.tiktok], ["WhatsApp", SITE.whatsapp]]
       .filter(function (x) { return safeUrl(x[1]); })
       .map(function (x) { return '<a href="' + esc(safeUrl(x[1])) + '" target="_blank" rel="noopener">' + x[0] + '</a>'; });
@@ -76,7 +75,7 @@
     $("caseGallery").innerHTML = (p.gallery || []).map(function (u) {
       return '<img loading="lazy" src="' + esc(safeUrl(u)) + '" alt="' + esc(p.title || "Project image") + '">';
     }).join("");
-    var ctaUrl = safeUrl(p.ctaUrl) || (SITE.email ? "mailto:" + SITE.email : "");
+    var ctaUrl = safeUrl(p.ctaUrl) || "#/start";
     $("caseCta").innerHTML = ctaUrl ? '<a class="btn" href="' + esc(ctaUrl) + '">' + esc(p.ctaLabel || "Start a project") + ' ↗</a>' : "";
     var parts = [['', p.excerpt], ['Challenge', p.challenge], ['Solution', p.solution], ['Results', p.results]]
       .filter(function (x) { return x[1]; })
@@ -90,7 +89,15 @@
   function route() {
     var h = decodeURIComponent(location.hash || "");
     var m = h.match(/^#\/project\/(.+)$/);
-    var home = $("home"), cs = $("case");
+    var home = $("home"), cs = $("case"), st = $("start");
+    if (h === "#/start") {
+      home.hidden = true; cs.hidden = true; st.hidden = false;
+      $("leadForm").hidden = false; $("lfDone").hidden = true; $("lfMsg").textContent = "";
+      document.title = "Start a conversation — VERANO";
+      window.scrollTo(0, 0);
+      return;
+    }
+    st.hidden = true;
     if (m) {
       var p = PROJECTS.filter(function (x) { return x.slug === m[1]; })[0];
       if (p) {
@@ -106,6 +113,68 @@
     var target = h.length > 1 ? document.getElementById(h.slice(1)) : null;
     if (target) target.scrollIntoView(); else if (!h) window.scrollTo(0, 0);
   }
+
+  // ---------- Lead form ----------
+  var METHODS = {
+    "WhatsApp": ["Your WhatsApp number *", "tel", "+233 …"],
+    "Phone call": ["Your phone number *", "tel", "+233 …"],
+    "Email": ["Your email address *", "email", "you@example.com"],
+    "Instagram": ["Your Instagram handle *", "text", "@yourhandle"]
+  };
+  $("lfMethod").addEventListener("change", function () {
+    var m = METHODS[this.value];
+    $("lfDetailLabel").textContent = m[0];
+    $("lfDetail").type = m[1];
+    $("lfDetail").placeholder = m[2];
+  });
+
+  function leadMsg(t) { $("lfMsg").textContent = t; }
+
+  $("leadForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var f = e.target;
+    var name = f.name.value.trim(), detail = f.contact_detail.value.trim();
+    var services = Array.prototype.map.call(f.querySelectorAll('input[name="service"]:checked'), function (i) { return i.value; });
+    if (!name) { leadMsg("Please enter your name."); f.name.focus(); return; }
+    if (!services.length) { leadMsg("Please pick at least one service."); return; }
+    if (!detail) { leadMsg("Please tell us how to reach you."); $("lfDetail").focus(); return; }
+    if (f.botcheck.checked) { $("leadForm").hidden = true; $("lfDone").hidden = false; return; }
+
+    var data = {
+      name: name,
+      business: f.business.value.trim() || "—",
+      services: services.join(", "),
+      contact_method: f.contact_method.value,
+      contact_detail: detail,
+      message: f.message.value.trim() || "—"
+    };
+    if (f.contact_method.value === "Email") data.email = detail;
+    var subject = "New VERANO inquiry — " + name + (f.business.value.trim() ? " (" + f.business.value.trim() + ")" : "");
+
+    function viaEmail() {
+      var body = "Name: " + data.name + "\nBusiness: " + data.business + "\nServices: " + data.services +
+        "\nReach me by: " + data.contact_method + " — " + data.contact_detail + "\n\n" + data.message;
+      leadMsg("Your email app should open. Just press send.");
+      location.href = "mailto:" + (SITE.email || "") + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    }
+
+    if (!SITE.formKey) { viaEmail(); return; }
+
+    var btn = $("lfSubmit"); btn.disabled = true; btn.textContent = "Sending…"; leadMsg("");
+    var payload = { access_key: SITE.formKey, subject: subject, from_name: "VERANO website" };
+    for (var k in data) payload[k] = data[k];
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(payload)
+    }).then(function (r) { return r.json(); }).then(function (j) {
+      btn.disabled = false; btn.textContent = "Send message";
+      if (j && j.success) { f.reset(); $("leadForm").hidden = true; $("lfDone").hidden = false; window.scrollTo(0, 0); }
+      else { viaEmail(); }
+    }).catch(function () {
+      btn.disabled = false; btn.textContent = "Send message"; viaEmail();
+    });
+  });
 
   renderGrid();
   renderContact();
