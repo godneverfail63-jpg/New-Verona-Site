@@ -4,10 +4,10 @@
    ===================================================================== */
 
 window.SITE = {
-  email: "hello@verano.agency",        // <- change to your real email
+  email: "hello.veranoagency@gmail.com",        // <- change to your real email
   instagram: "",                        // e.g. "https://instagram.com/yourhandle" (leave "" to hide)
-  tiktok: "",                           // e.g. "https://tiktok.com/@yourhandle"
-  whatsapp: ""                          // e.g. "https://wa.me/233201234567"
+  tiktok: "https://www.tiktok.com/@veranoagency?_r=1&_t=ZS-9AP4FrNgTxN",                           // e.g. "https://tiktok.com/@yourhandle"
+  whatsapp: "https://wa.me/message/HCB5NYNA6A23P1"                          // e.g. "https://wa.me/233201234567"
 };
 
 /* Add a project by copying one block below. Rules:
