@@ -25,7 +25,7 @@ window.PROJECTS = [
     client: "femmighttheroyal",
     year: "2026",
     services: ["Content System", "Ad Creation"],
-    heroImage: "",                      // e.g. "assets/launch-hero.jpg"
+    heroImage: "assets/IMG_4502.jpeg",                      // e.g. "assets/launch-hero.jpg"
     videoUrl: "",                       // e.g. "https://www.youtube.com/watch?v=XXXXXXXXXXX"
     gallery: [],                        // e.g. ["assets/launch-1.jpg", "assets/launch-2.jpg"]
     excerpt: "Replace this with one sentence on what you did for the client.",
