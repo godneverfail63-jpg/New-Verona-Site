@@ -45,10 +45,10 @@ window.PROJECTS = [
     client: "Boutique Store",
     year: "2026",
     services: ["Ad Creation"],
-    heroImage: "", videoUrl: "", gallery: [],
-    excerpt: "Replace this with your event story.",
-    challenge: "", solution: "", results: "",
-    content: "Write about the event here.",
+    heroImage: "assets/EA436887-47EC-4A81-BF76-0DC3A61CDCF0.png", pageurl: "https://www.tiktok.com/@coupuresboutique?_r=1&_t=ZS-9APF4QC5sxR", gallery: [],
+    excerpt: "Specifically crafted to showcase their produce and make thier location known.",
+    challenge: "Slow Sales", solution: "We showcased their products in an appealing and luxurious way to a new set of potential buyers", results: "We raised the monthly revenue from #5million to #15million in 60days of consistent ads creation",
+    content: ".We developed premium visual content to showcase the brand’s products, strengthen its luxury positioning, and increase awareness of its physical location. Through consistent ad creation and strategic product presentation, we attracted new potential buyers and helped drive monthly revenue from ₦5 million to ₦15 million within 60 days.",
     ctaLabel: "", ctaUrl: "", seoDescription: ""
   },
   {
