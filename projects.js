@@ -4,11 +4,13 @@
    ===================================================================== */
 
 window.SITE = {
-  email: "hello.veranoagency@gmail.com",        // <- change to your real email
-  instagram: "",                        // e.g. "https://instagram.com/yourhandle" (leave "" to hide)
-  tiktok: "https://www.tiktok.com/@veranoagency?_r=1&_t=ZS-9AP4FrNgTxN",                           // e.g. "https://tiktok.com/@yourhandle"
-  whatsapp: "https://wa.me/message/HCB5NYNA6A23P1"                          // e.g. "https://wa.me/233201234567"
+  email: "hello.veranoagency@gmail.com",
+  instagram: "",
+  tiktok: "https://www.tiktok.com/@veranoagency?_r=1&_t=ZS-9APMIt4AIoW",
+  whatsapp: "https://wa.me/message/HCB5NYNA6A23P1",
+  formKey: "e5e7bb1c-8500-4e0f-b4ad-4706bac2da32"
 };
+
 
 /* Add a project by copying one block below. Rules:
    - "slug" must be unique, lowercase, no spaces (use dashes).
