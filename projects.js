@@ -18,13 +18,13 @@ window.SITE = {
 
 window.PROJECTS = [
   {
-    slug: "sample-brand-launch",
-    title: "Sample Brand Launch",
-    subtitle: "Launch content system",
-    category: "Social Media Management",
-    client: "Sample Client",
+    slug: "Royal-Electronics",
+    title: "Brand Awareness",
+    subtitle: "live like royalty",
+    category: "Content System",
+    client: "femmighttheroyal",
     year: "2026",
-    services: ["Social Media Management", "Ad Creation"],
+    services: ["Content System", "Ad Creation"],
     heroImage: "",                      // e.g. "assets/launch-hero.jpg"
     videoUrl: "",                       // e.g. "https://www.youtube.com/watch?v=XXXXXXXXXXX"
     gallery: [],                        // e.g. ["assets/launch-1.jpg", "assets/launch-2.jpg"]
