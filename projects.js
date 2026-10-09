@@ -19,7 +19,7 @@ window.SITE = {
 window.PROJECTS = [
   {
     slug: "Royal-Electronics",
-    title: "Brand Awareness",
+    title: "Royal Electronics",
     subtitle: "live like royalty",
     category: "Content System",
     client: "femmighttheroyal",
