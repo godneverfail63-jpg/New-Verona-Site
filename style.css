@@ -110,4 +110,41 @@ main,footer{position:relative;z-index:1}
 /* ---- Side padding fix (keeps text off the screen edge) ---- */
 .hero-inner,.case-grid,.footer{padding-left:28px;padding-right:28px}
 @media(max-width:520px){.hero-inner,.case-grid,.footer{padding-left:20px;padding-right:20px}}
-@media(max-width:800px){body::before{background-size:100vw auto;opacity:.15}}
+@media(max-width:800px){body::before{background-size:100vw auto;opacity:.10}}
+
+/* ---- Video hero: "Built from the ground up" ---- */
+.vhero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.vhero-media{position:absolute;inset:0;background:#0b0b0b url('assets/hero-start.jpg') center/cover no-repeat}
+.vhero-media video{width:100%;height:100%;object-fit:cover;display:block}
+.vhero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,8,.55) 0,rgba(8,8,8,.05) 28%,rgba(8,8,8,.15) 45%,rgba(8,8,8,.92) 100%);pointer-events:none}
+.vhero-inner{position:relative;z-index:2;width:100%;padding-top:120px;padding-bottom:56px}
+.vhero-text{display:grid}
+.vcap,.vfinal{grid-area:1/1;transition:opacity .7s ease,transform .7s ease}
+.vcap{align-self:end;font:normal clamp(34px,8vw,64px)/1.05 Georgia,serif;letter-spacing:-.03em;max-width:620px}
+.vcap span{display:block;transition:opacity .35s ease}
+.vcap span.out{opacity:0}
+.vfinal{opacity:0;transform:translateY(14px);pointer-events:none}
+.vfinal h1{font:normal clamp(44px,9vw,104px)/.95 Georgia,serif;margin:0 0 22px;letter-spacing:-.05em;max-width:900px}
+.vfinal h1 em{color:var(--gold);font-style:normal}
+.vfinal .eyebrow{margin-bottom:18px}
+.vfinal .hero-copy{margin:0 0 28px}
+.vbtns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-solid{background:var(--gold);color:#0a0a0a}
+.vhero.is-done .vcap{opacity:0;transform:translateY(-10px);pointer-events:none}
+.vhero.is-done .vfinal{opacity:1;transform:none;pointer-events:auto}
+.vprog{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--gold);z-index:3;transition:opacity .6s}
+.vhero.is-done .vprog{opacity:0}
+.vhero.is-static .vhero-media{background-image:url('assets/hero-end.jpg')}
+.vhero.is-static video{display:none}
+@media(min-width:900px){
+  .vhero{align-items:center;padding:100px 0 60px}
+  .vhero::after{display:none}
+  .vhero-inner{padding-top:0;padding-bottom:0}
+  .vhero-text{max-width:56%}
+  .vhero-media{inset:auto;top:50%;right:max(28px,calc((100vw - 1180px)/2 + 28px));transform:translateY(-50%);height:min(80vh,780px);aspect-ratio:9/16;border:1px solid #3a3327;z-index:2}
+}
+@media(prefers-reduced-motion:reduce){.vcap,.vfinal,.vprog{transition:none}}
+.vhero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .8s ease;background:linear-gradient(180deg,rgba(8,8,8,.55) 0,rgba(8,8,8,.62) 38%,rgba(8,8,8,.94) 100%)}
+.vhero.is-done::before{opacity:1}
+@media(min-width:900px){.vhero::before{display:none}}
+@media(min-width:900px){.vfinal h1{font-size:clamp(44px,5.4vw,82px)}.vhero-media{height:min(74vh,740px)}.vcap{font-size:clamp(40px,4.6vw,68px)}}
