@@ -28,11 +28,11 @@ window.PROJECTS = [
     heroImage: "assets/IMG_4502.jpeg",                      // e.g. "assets/launch-hero.jpg"
     videoUrl: "",                       // e.g. "https://www.youtube.com/watch?v=XXXXXXXXXXX"
     gallery: [],                        // e.g. ["assets/launch-1.jpg", "assets/launch-2.jpg"]
-    excerpt: "Replace this with one sentence on what you did for the client.",
-    challenge: "What problem did the brand have? Example: great product, but nobody was seeing it online.",
-    solution: "What did VERANO do? Example: a shoot, a content system, and a posting and ad plan.",
-    results: "What changed? Only add numbers you can prove (reach, sales, followers).",
-    content: "## The story\n\nWrite the full case study here. Use blank lines between paragraphs.\n\n### What we delivered\n\n- Shoot and edit\n- Content calendar\n- Ad positioning\n",
+    excerpt: "We increases the company sales by 40% in one month and expanded their sales territories.",
+    challenge: "Sells quality and great products, but there was zero online sales.",
+    solution: "We created a premium online visual that drags in sales, built the best content system that suits their product, and a posting and ad plan.",
+    results: "The monthly revenue increased rapidly with a 40% increased monthly sales",
+    content: "## The story\n\n**Great products. Zero online sales. Until we changed the game.**\n\nThe products were good, but the online presence wasn't converting attention into sales.\n\nWe built a premium visual experience, a strategic content system, and a targeted advertising plan designed to turn viewers into buyers.\n\n**The result? A 40% increase in monthly sales in just 30 days.**\n\nBecause great products don't just need to exist. They need to sell.\n\n### What we delivered\n\n- Product shoot and editing\n- Strategic content calendar\n- Ad positioning and strategy\n",
     ctaLabel: "Start a project",
     ctaUrl: "",                         // "" = uses your email from SITE above
     seoDescription: "Sample case study by VERANO."
