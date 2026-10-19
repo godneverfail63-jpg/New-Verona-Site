@@ -1,0 +1,68 @@
+/* Packages page (unlisted). Builds on style.css tokens. */
+.pk{padding-top:76px}
+.pk-hero{padding:90px 0 70px;background:radial-gradient(circle at 80% 10%,rgba(216,179,106,.12),transparent 40%)}
+.pk h1{font:normal clamp(44px,8vw,96px)/.95 Georgia,serif;letter-spacing:-.045em;margin:18px 0 22px;max-width:900px}
+.pk .lead{max-width:640px;color:#b9b5ab;font-size:18px;line-height:1.7;margin:0 0 44px}
+.glance{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:36px}
+.glance>div{background:#0a0a0a;padding:24px 26px}
+.glance b{display:block;font:normal 32px Georgia,serif;color:var(--gold);margin-bottom:8px}
+.glance span{color:var(--muted);font-size:14px;line-height:1.5}
+.pk .hero-actions{margin-bottom:18px}
+.pk .btn-solid{font-size:12px;letter-spacing:.08em;padding:14px 24px}
+.fine{color:var(--muted);font-size:13px;margin:0}
+.pk-sec{padding:80px 0;border-top:1px solid var(--line);scroll-margin-top:60px}
+.pk-sec h2{font:normal clamp(32px,4.5vw,52px)/1.05 Georgia,serif;letter-spacing:-.035em;margin:0 0 16px}
+.pk .sub{color:var(--muted);line-height:1.75;max-width:620px;margin:0 0 40px}
+.items{border-top:1px solid var(--line)}
+.item{display:grid;grid-template-columns:200px 1fr;gap:40px;padding:34px 0;border-bottom:1px solid var(--line);align-items:start}
+.cnt b{display:block;font:normal 54px/1 Georgia,serif;color:var(--gold);letter-spacing:-.03em}
+.cnt span{display:block;margin-top:10px;color:var(--muted);font-size:13px;line-height:1.5}
+.item h3{font:normal 26px/1.15 Georgia,serif;margin:0 0 12px}
+.item p{margin:0;color:#b9b5ab;line-height:1.8;max-width:640px}
+.tl{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tl li{border-top:2px solid var(--gold);padding:22px 0 0}
+.wk{font:normal 24px Georgia,serif;margin-bottom:10px}
+.tl p{margin:0;color:#b9b5ab;line-height:1.75}
+.plans{display:grid;grid-template-columns:1.2fr 1fr;gap:22px;margin:30px 0 22px}
+.plan{border:1px solid var(--line);padding:34px 32px;background:rgba(10,10,10,.9);display:flex;flex-direction:column;align-items:flex-start}
+.plan.main{border-color:var(--gold);background:linear-gradient(145deg,#17120b,#0a0a0a)}
+.plan-name{font:normal 22px Georgia,serif}
+.price{font:normal clamp(44px,6vw,64px)/1 Georgia,serif;color:var(--gold);letter-spacing:-.03em;margin:18px 0 6px}
+.plan-note{color:var(--muted);font-size:14px;margin-bottom:18px}
+.plan p{color:#b9b5ab;line-height:1.75;margin:0 0 26px;flex:1}
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:200px 1fr;gap:40px;padding:20px 0;border-bottom:1px solid var(--line)}
+.row b{font:normal 18px Georgia,serif}
+.row span{color:#b9b5ab;line-height:1.7}
+.guar{border:1px solid var(--gold);padding:54px;background:linear-gradient(120deg,#17120b,#0a0a0a)}
+.guar h2{max-width:820px;margin:16px 0 22px}
+.guar p{margin:0;max-width:720px;color:#c5c0b7;line-height:1.8}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.plain{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.plain li{padding:16px 0;border-bottom:1px solid var(--line);color:#b9b5ab;line-height:1.7}
+.plain b{color:var(--cream);font-weight:400}
+.pk .cta{align-items:center}
+.pk .cta h2{margin-bottom:12px}
+.pk .cta .sub{margin:0;max-width:520px}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+.pk-sec .btn-solid,.hero-actions .btn-solid{display:inline-flex}
+.dock{display:none}
+.footer a{color:var(--gold)}
+@media(max-width:800px){
+.pk-hero{padding:56px 0 50px}
+.glance{grid-template-columns:1fr}
+.item{grid-template-columns:1fr;gap:14px;padding:28px 0}
+.cnt b{font-size:44px}
+.tl{grid-template-columns:1fr;gap:26px}
+.plans{grid-template-columns:1fr}
+.row{grid-template-columns:1fr;gap:6px}
+.guar{padding:32px 24px}
+.two{grid-template-columns:1fr;gap:44px}
+.pk-sec{padding:60px 0}
+.pk .cta{padding:34px 24px;display:block}
+.cta-btns{margin-top:26px}
+.navin .btn{display:none}
+.dock{display:block;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:rgba(8,8,8,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+.dock .btn{width:100%;justify-content:center;padding:16px}
+.footer{padding-bottom:96px}
+}

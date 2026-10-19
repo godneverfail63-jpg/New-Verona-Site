@@ -109,7 +109,7 @@
       location.hash = "#work"; return;
     }
     cs.hidden = true; home.hidden = false;
-    document.title = "VERANO — Built for brands that want to be seen.";
+    document.title = "VERANO — Launch marketing for brands that want to be seen";
     var target = h.length > 1 ? document.getElementById(h.slice(1)) : null;
     if (target) target.scrollIntoView(); else if (!h) window.scrollTo(0, 0);
   }
